@@ -2,68 +2,130 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FAQ RooTopia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
-      background: linear-gradient(to bottom, #0a0a0a, #1a1a1a);
-      color: #eee;
+      background: radial-gradient(circle at top left, #111, #0a0a0a);
       font-family: 'Poppins', sans-serif;
-      padding: 40px;
+      color: #eee;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
-    h1 {
-      color: #00cc88;
-      font-size: 36px;
+    header {
       text-align: center;
-      margin-bottom: 40px;
+      padding: 60px 20px 40px;
     }
-    .faq {
-      background-color: #111;
+    header h1 {
+      color: #00e0a8;
+      font-size: 42px;
+      font-weight: 700;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 0 20px 40px;
+    }
+    .faq-item {
+      background: #1a1a1a;
+      border-radius: 14px;
+      margin: 15px 0;
+      overflow: hidden;
+      transition: 0.3s ease;
       border-left: 4px solid #00cc88;
-      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+    .faq-question {
       padding: 20px;
-      margin: 20px auto;
-      max-width: 800px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    }
-    .faq h3 {
-      color: #00cc88;
-      margin-bottom: 10px;
+      cursor: pointer;
       font-weight: 500;
+      color: #00cc88;
+      position: relative;
     }
-    .faq p {
+    .faq-question::after {
+      content: '+';
+      position: absolute;
+      right: 20px;
+      font-size: 24px;
+      transition: 0.3s ease;
+    }
+    .faq-item.active .faq-question::after {
+      content: '–';
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      padding: 0 20px 20px;
       font-weight: 300;
-      line-height: 1.6;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+    }
+    footer {
+      margin-top: auto;
+      background: #111;
+      padding: 30px 20px;
+      text-align: center;
+      color: #666;
+      font-size: 14px;
+      border-top: 1px solid #333;
     }
   </style>
 </head>
 <body>
-  <h1>❓ FAQ RooTopia</h1>
 
-  <div class="faq">
-    <h3>Kenapa tidak bisa login?</h3>
-    <p>Pastikan kamu sudah mengatur host menggunakan PowerTunnel / Virtual Host dan Growtopia tidak sedang update.</p>
+  <header>
+    <h1>❓ FAQ RooTopia</h1>
+  </header>
+
+  <div class="container">
+    <div class="faq-item">
+      <div class="faq-question">Kenapa tidak bisa login?</div>
+      <div class="faq-answer">Pastikan kamu sudah mengatur host menggunakan PowerTunnel / Virtual Host dan Growtopia tidak sedang update.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Tools mana yang cocok untuk HP saya?</div>
+      <div class="faq-answer">Jika Android, gunakan PowerTunnel atau Virtual Host. Jika iOS, gunakan Shadowrocket. Jika PC, gunakan Proxifier.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Apakah RooTopia legal?</div>
+      <div class="faq-answer">RooTopia adalah server private, bukan server resmi Ubisoft. Main dengan tanggung jawab sendiri.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Dimana saya bisa bergabung ke komunitas?</div>
+      <div class="faq-answer">Kamu bisa join Discord kami untuk tanya jawab, laporan bug, dan pengumuman. Link tersedia di halaman utama.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Apa server ini butuh VPN?</div>
+      <div class="faq-answer">Tidak perlu VPN. Cukup gunakan tools yang kami sediakan di halaman Download seperti PowerTunnel atau Virtual Host.</div>
+    </div>
   </div>
 
-  <div class="faq">
-    <h3>Tools mana yang cocok untuk HP saya?</h3>
-    <p>Jika Android, gunakan PowerTunnel atau Virtual Host. Jika iOS, gunakan Shadowrocket. Jika PC, gunakan Proxifier.</p>
-  </div>
+  <footer>
+    &copy; 2025 RooTopia GTPS. All rights reserved. Designed with ❤️ by CoolDown.
+  </footer>
 
-  <div class="faq">
-    <h3>Apakah RooTopia legal?</h3>
-    <p>RooTopia adalah server private, bukan server resmi Ubisoft. Main dengan tanggung jawab sendiri.</p>
-  </div>
-
-  <div class="faq">
-    <h3>Dimana saya bisa bergabung ke komunitas?</h3>
-    <p>Kamu bisa join Discord kami untuk tanya jawab, laporan bug, dan pengumuman. Link tersedia di halaman utama.</p>
-  </div>
-
-  <div class="faq">
-    <h3>Apa server ini butuh VPN?</h3>
-    <p>Tidak perlu VPN. Cukup gunakan tools yang kami sediakan di halaman Download seperti PowerTunnel atau Virtual Host.</p>
-  </div>
+  <script>
+    document.querySelectorAll('.faq-question').forEach((question) => {
+      question.addEventListener('click', () => {
+        const item = question.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+  </script>
 
 </body>
 </html>

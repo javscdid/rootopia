@@ -1,34 +1,54 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FAQ RooTopia</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #0e0e0e;
+      --card: #181818;
+      --text: #f1f1f1;
+      --accent: #888;
+      --highlight: #ffffff;
+    }
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
     body {
-      background: linear-gradient(to bottom right, #111, #1e1e1e);
+      background: var(--bg);
       font-family: 'Poppins', sans-serif;
-      color: #f1f1f1;
+      color: var(--text);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
     header {
       text-align: center;
-      padding: 60px 20px 40px;
-      background-color: #0d0d0d;
+      padding: 60px 20px 30px;
+      background-color: #0a0a0a;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     }
     header h1 {
-      color: #eaeaea;
       font-size: 42px;
       font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .search-box {
+      max-width: 400px;
+      margin: 0 auto 30px;
+    }
+    .search-box input {
+      width: 100%;
+      padding: 10px 16px;
+      border-radius: 10px;
+      border: none;
+      font-size: 16px;
+      background: #222;
+      color: var(--text);
     }
     .container {
       max-width: 900px;
@@ -36,51 +56,78 @@
       padding: 0 20px 40px;
     }
     .faq-item {
-      background: #181818;
+      background: var(--card);
       border-radius: 14px;
       margin: 15px 0;
       overflow: hidden;
-      transition: 0.3s ease;
-      border-left: 4px solid #888;
+      border-left: 4px solid var(--accent);
+      transition: all 0.3s ease;
       box-shadow: 0 6px 16px rgba(0,0,0,0.5);
     }
     .faq-question {
       padding: 20px;
       cursor: pointer;
       font-weight: 500;
-      color: #ffffff;
+      color: var(--highlight);
       position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    .faq-question::after {
-      content: '+';
-      position: absolute;
-      right: 20px;
-      font-size: 24px;
-      transition: 0.3s ease;
-      color: #ccc;
-    }
-    .faq-item.active .faq-question::after {
-      content: '–';
+    .faq-question span.icon {
+      font-size: 22px;
+      transition: transform 0.3s ease;
     }
     .faq-answer {
-      padding: 0 20px 20px;
+      padding: 0 20px;
       font-weight: 300;
       max-height: 0;
       overflow: hidden;
-      color: #d0d0d0;
-      transition: max-height 0.4s ease;
+      color: #ccc;
+      transition: max-height 0.4s ease, padding 0.3s ease;
     }
     .faq-item.active .faq-answer {
       max-height: 300px;
+      padding-bottom: 20px;
     }
-    footer {
+    .faq-item.active .faq-question span.icon {
+      transform: rotate(45deg);
+    }
+    .footer {
       margin-top: auto;
-      background: #0f0f0f;
+      background: #101010;
       padding: 30px 20px;
       text-align: center;
-      color: #888;
+      color: #777;
       font-size: 14px;
       border-top: 1px solid #333;
+    }
+    .cta {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .cta a {
+      background: #fff;
+      color: #111;
+      padding: 12px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .cta a:hover {
+      background: #eee;
+    }
+    .back-link {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .back-link a {
+      color: #bbb;
+      text-decoration: none;
+    }
+    .back-link a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -88,36 +135,64 @@
 
   <header>
     <h1>❓ FAQ RooTopia</h1>
+    <div class="search-box">
+      <input type="text" id="faq-search" placeholder="Cari pertanyaan...">
+    </div>
   </header>
 
-  <div class="container">
+  <div class="container" id="faq-list">
+
     <div class="faq-item">
-      <div class="faq-question">Kenapa tidak bisa login?</div>
+      <div class="faq-question">
+        Kenapa tidak bisa login?
+        <span class="icon">+</span>
+      </div>
       <div class="faq-answer">Pastikan kamu sudah mengatur host menggunakan PowerTunnel / Virtual Host dan Growtopia tidak sedang update.</div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-question">Tools mana yang cocok untuk HP saya?</div>
+      <div class="faq-question">
+        Tools mana yang cocok untuk HP saya?
+        <span class="icon">+</span>
+      </div>
       <div class="faq-answer">Jika Android, gunakan PowerTunnel atau Virtual Host. Jika iOS, gunakan Shadowrocket. Jika PC, gunakan Proxifier.</div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-question">Apakah RooTopia legal?</div>
+      <div class="faq-question">
+        Apakah RooTopia legal?
+        <span class="icon">+</span>
+      </div>
       <div class="faq-answer">RooTopia adalah server private, bukan server resmi Ubisoft. Main dengan tanggung jawab sendiri.</div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-question">Dimana saya bisa bergabung ke komunitas?</div>
+      <div class="faq-question">
+        Dimana saya bisa gabung komunitas?
+        <span class="icon">+</span>
+      </div>
       <div class="faq-answer">Kamu bisa join Discord kami untuk tanya jawab, laporan bug, dan pengumuman. Link tersedia di halaman utama.</div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-question">Apa server ini butuh VPN?</div>
-      <div class="faq-answer">Tidak perlu VPN. Cukup gunakan tools yang kami sediakan di halaman Download seperti PowerTunnel atau Virtual Host.</div>
+      <div class="faq-question">
+        Apa server ini butuh VPN?
+        <span class="icon">+</span>
+      </div>
+      <div class="faq-answer">Tidak perlu VPN. Cukup gunakan tools seperti PowerTunnel atau Virtual Host untuk mengganti host Growtopia.</div>
     </div>
+
   </div>
 
-  <footer>
+  <div class="cta">
+    <a href="https://discord.gg/YOUR_LINK" target="_blank">Gabung Discord RooTopia</a>
+  </div>
+
+  <div class="back-link">
+    <a href="index.html">← Kembali ke Beranda</a>
+  </div>
+
+  <footer class="footer">
     &copy; 2025 RooTopia GTPS. All rights reserved. Designed with ❤️ by CoolDown.
   </footer>
 
@@ -126,6 +201,18 @@
       question.addEventListener('click', () => {
         const item = question.parentElement;
         item.classList.toggle('active');
+      });
+    });
+
+    // Search Filter
+    const searchInput = document.getElementById('faq-search');
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    searchInput.addEventListener('input', function () {
+      const query = this.value.toLowerCase();
+      faqItems.forEach(item => {
+        const questionText = item.querySelector('.faq-question').textContent.toLowerCase();
+        item.style.display = questionText.includes(query) ? 'block' : 'none';
       });
     });
   </script>

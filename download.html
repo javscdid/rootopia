@@ -71,6 +71,29 @@
     .btn:hover {
       background: #e6b800;
     }
+    .sub-btns {
+      margin-top: 10px;
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .sub-btns a {
+      background: #000;
+      border: 2px solid #ffcc00;
+      color: #ffcc00;
+      padding: 10px 15px;
+      border-radius: 8px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .sub-btns a:hover {
+      background: #ffcc00;
+      color: #000;
+    }
+    .toggle-btn {
+      cursor: pointer;
+    }
     footer {
       text-align: center;
       padding: 20px;
@@ -80,6 +103,12 @@
       margin-top: 50px;
     }
   </style>
+  <script>
+    function toggleAndroidSubs() {
+      var subs = document.getElementById('androidSubLinks');
+      subs.style.display = subs.style.display === 'none' ? 'flex' : 'none';
+    }
+  </script>
 </head>
 <body>
 
@@ -103,8 +132,18 @@
 
     <div class="download-card">
       <h3>📱 Client for Android (.apk)</h3>
-      <p>Main RooTopia di HP kamu dengan versi Android APK. Pastikan aktifkan "Sumber Tidak Dikenal".</p>
-      <a class="btn" href="https://example.com/roootopia-android.apk" target="_blank">Download Android</a>
+      <p>Main RooTopia di HP kamu dengan versi Android. Tersedia dua metode koneksi: PowerTunnel dan Virtual Host.</p>
+      <div class="btn toggle-btn" onclick="toggleAndroidSubs()">Pilih Android Client</div>
+      <div class="sub-btns" id="androidSubLinks">
+        <a href="https://example.com/powertunnel.apk" target="_blank">📲 PowerTunnel</a>
+        <a href="https://example.com/virtualhost.apk" target="_blank">📡 Virtual Host</a>
+      </div>
+    </div>
+
+    <div class="download-card">
+      <h3>🍎 Client for iOS (Surge 5)</h3>
+      <p>Gunakan Surge 5 di perangkat iOS kamu dengan konfigurasi profile yang siap pakai.</p>
+      <a class="btn" href="https://example.com/surge-profile.mobileconfig" target="_blank">Download iOS</a>
     </div>
 
     <div class="download-card">

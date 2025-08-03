@@ -1,161 +1,101 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Download RooTopia Client</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download - RooTopia</title>
   <link rel="icon" href="logo.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom, #0a0a0a, #1a1a1a);
       font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #0a0a0a, #111);
       color: #eee;
-    }
-    .nav {
-      background-color: #121212;
-      padding: 15px 0;
       text-align: center;
-      box-shadow: 0 2px 8px rgba(255, 204, 0, 0.1);
-    }
-    .nav a {
-      color: #ccc;
-      margin: 0 20px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 16px;
-    }
-    .nav a:hover {
-      color: #ffcc00;
     }
     .section {
       max-width: 800px;
-      margin: 40px auto;
-      background: #161616;
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 0 20px rgba(255,204,0,0.08);
+      margin: auto;
+      padding: 40px 20px 20px;
     }
-    .section h1 {
-      color: #ffcc00;
-      text-align: center;
-    }
-    .download-card {
-      background: #1f1f1f;
-      border: 2px solid #ffcc00;
-      border-radius: 14px;
-      padding: 20px;
-      margin: 20px 0;
-      box-shadow: 0 0 10px rgba(255,204,0,0.1);
-    }
-    .download-card h3 {
-      margin: 0 0 10px;
-      color: #ffcc00;
-    }
-    .download-card p {
-      color: #ccc;
-      font-size: 14.5px;
+    h1 {
+      color: gold;
     }
     .btn {
-      display: inline-block;
-      background: #ffcc00;
-      color: #000;
-      padding: 10px 20px;
-      border-radius: 8px;
-      text-decoration: none;
+      background-color: gold;
+      color: #111;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 10px;
+      margin: 10px;
       font-weight: bold;
-      margin-top: 15px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
     }
     .btn:hover {
-      background: #e6b800;
+      background-color: #d4af37;
     }
-    .sub-btns {
-      margin-top: 10px;
+    .sub-buttons {
       display: none;
-      flex-direction: column;
-      gap: 10px;
+      margin-top: 10px;
     }
-    .sub-btns a {
-      background: #000;
-      border: 2px solid #ffcc00;
-      color: #ffcc00;
-      padding: 10px 15px;
-      border-radius: 8px;
-      text-align: center;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .sub-btns a:hover {
-      background: #ffcc00;
-      color: #000;
-    }
-    .toggle-btn {
-      cursor: pointer;
-    }
-    footer {
-      text-align: center;
+    .footer {
+      margin-top: 40px;
       padding: 20px;
       font-size: 14px;
-      color: #666;
-      background: #0f0f0f;
-      margin-top: 50px;
+      color: #ccc;
+    }
+    .discord-btn {
+      background: white;
+      color: black;
+      font-weight: bold;
+      padding: 12px 20px;
+      border-radius: 12px;
+      display: inline-block;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+    .back-link {
+      display: block;
+      margin-top: 10px;
+      color: #eee;
+      text-decoration: none;
+    }
+    .back-link:hover {
+      color: gold;
     }
   </style>
-  <script>
-    function toggleAndroidSubs() {
-      var subs = document.getElementById('androidSubLinks');
-      subs.style.display = subs.style.display === 'none' ? 'flex' : 'none';
-    }
-  </script>
 </head>
 <body>
-
-  <div class="nav">
-    <a href="index.html">Beranda</a>
-    <a href="tutorial.html">Tutorial</a>
-    <a href="faq.html">FAQ</a>
-    <a href="download.html">Download</a>
-    <a href="team.html">Tim</a>
-    <a href="rules.html">Peraturan</a>
-  </div>
-
   <div class="section">
-    <h1>📥 Download RooTopia Client</h1>
+    <h1>Download Tools RooTopia</h1>
+    <p>Silakan pilih perangkatmu untuk melihat tool yang tersedia.</p>
 
-    <div class="download-card">
-      <h3>🔗 Client for Windows (.exe)</h3>
-      <p>Versi ringan dan cepat untuk pengguna Windows. Dapat langsung dijalankan tanpa instalasi tambahan.</p>
-      <a class="btn" href="https://example.com/roootopia-windows.exe" target="_blank">Download Windows</a>
+    <button class="btn" onclick="toggleAndroid()">Android</button>
+    <div id="android-tools" class="sub-buttons">
+      <a href="#" class="btn">PowerTunnel</a>
+      <a href="#" class="btn">Virtual Host</a>
     </div>
 
-    <div class="download-card">
-      <h3>📱 Client for Android (.apk)</h3>
-      <p>Main RooTopia di HP kamu dengan versi Android. Tersedia dua metode koneksi: PowerTunnel dan Virtual Host.</p>
-      <div class="btn toggle-btn" onclick="toggleAndroidSubs()">Pilih Android Client</div>
-      <div class="sub-btns" id="androidSubLinks">
-        <a href="https://example.com/powertunnel.apk" target="_blank">📲 PowerTunnel</a>
-        <a href="https://example.com/virtualhost.apk" target="_blank">📡 Virtual Host</a>
-      </div>
-    </div>
-
-    <div class="download-card">
-      <h3>🍎 Client for iOS (Surge 5)</h3>
-      <p>Gunakan Surge 5 di perangkat iOS kamu dengan konfigurasi profile yang siap pakai.</p>
-      <a class="btn" href="https://example.com/surge-profile.mobileconfig" target="_blank">Download iOS</a>
-    </div>
-
-    <div class="download-card">
-      <h3>💡 Versi Lain / Mirror Link</h3>
-      <p>Link alternatif jika link utama mengalami gangguan. Kompatibel dengan semua client Growtopia v3+</p>
-      <a class="btn" href="https://example.com/mirror-link" target="_blank">Download Mirror</a>
-    </div>
+    <br>
+    <a href="#" class="btn">PC (IP)</a>
+    <a href="#" class="btn">iOS (Surge 5)</a>
   </div>
 
-  <footer>
-    © 2025 RooTopia GTPS. All rights reserved.
-  </footer>
+  <div class="footer">
+    <a href="https://discord.gg/yourdiscordlink" class="discord-btn">Gabung Discord RooTopia</a>
+    <a href="index.html" class="back-link">← Kembali ke Beranda</a>
+    <p>© 2025 RooTopia GTPS. All rights reserved.<br>
+    Designed with ❤️ by CoolDown.</p>
+  </div>
 
+  <script>
+    function toggleAndroid() {
+      const tools = document.getElementById('android-tools');
+      tools.style.display = tools.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
 </body>
 </html>

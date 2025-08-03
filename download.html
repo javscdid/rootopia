@@ -1,101 +1,93 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Download - RooTopia</title>
-  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    function salinIP(ip) {
+      navigator.clipboard.writeText(ip);
+      alert("IP berhasil disalin: " + ip);
+    }
+
+    function toggleDetail(id) {
+      const content = document.getElementById(id);
+      content.classList.toggle("hidden");
+    }
+  </script>
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to bottom, #0a0a0a, #111);
-      color: #eee;
-      text-align: center;
+    .download-section {
+      background-color: #0d0d0d;
+      padding: 2rem;
+      border-radius: 1rem;
+      margin-bottom: 2rem;
     }
-    .section {
-      max-width: 800px;
-      margin: auto;
-      padding: 40px 20px 20px;
-    }
-    h1 {
-      color: gold;
-    }
-    .btn {
-      background-color: gold;
-      color: #111;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 10px;
-      margin: 10px;
-      font-weight: bold;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .btn:hover {
-      background-color: #d4af37;
-    }
-    .sub-buttons {
-      display: none;
-      margin-top: 10px;
-    }
-    .footer {
-      margin-top: 40px;
-      padding: 20px;
-      font-size: 14px;
-      color: #ccc;
-    }
-    .discord-btn {
-      background: white;
+
+    .download-button {
+      background: #ffce3d;
       color: black;
+      padding: 0.75rem 1.25rem;
+      border: none;
+      border-radius: 0.5rem;
       font-weight: bold;
-      padding: 12px 20px;
-      border-radius: 12px;
-      display: inline-block;
-      text-decoration: none;
-      margin-bottom: 10px;
+      margin: 0.5rem;
+      cursor: pointer;
+      transition: background 0.3s;
     }
-    .back-link {
+
+    .download-button:hover {
+      background: #e0b830;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .footer {
+      text-align: center;
+      color: #aaa;
+      margin-top: 3rem;
+      font-size: 0.85rem;
+    }
+
+    .footer span {
       display: block;
-      margin-top: 10px;
-      color: #eee;
-      text-decoration: none;
+      margin-top: 1rem;
     }
-    .back-link:hover {
-      color: gold;
+
+    .back-link {
+      display: inline-block;
+      margin-top: 1.5rem;
+      color: #fff;
+      text-decoration: underline;
     }
   </style>
 </head>
-<body>
-  <div class="section">
-    <h1>Download Tools RooTopia</h1>
-    <p>Silakan pilih perangkatmu untuk melihat tool yang tersedia.</p>
+<body style="background-color: #0a0a0a; font-family: sans-serif; color: white;">
 
-    <button class="btn" onclick="toggleAndroid()">Android</button>
-    <div id="android-tools" class="sub-buttons">
-      <a href="#" class="btn">PowerTunnel</a>
-      <a href="#" class="btn">Virtual Host</a>
+  <div class="download-section">
+    <h2>Untuk Android</h2>
+    <button class="download-button" onclick="toggleDetail('android')">Lihat Pilihan</button>
+    <div id="android" class="hidden">
+      <button class="download-button" onclick="salinIP('rootopia.vercel.app')">PowerTunnel (Salin IP)</button>
+      <a href="https://example.com/virtualhost.apk" class="download-button">Virtual Host (Download)</a>
     </div>
+  </div>
 
-    <br>
-    <a href="#" class="btn">PC (IP)</a>
-    <a href="#" class="btn">iOS (Surge 5)</a>
+  <div class="download-section">
+    <h2>Untuk iOS</h2>
+    <button class="download-button" onclick="salinIP('rootopia.vercel.app')">Surge 5 (Salin IP)</button>
+  </div>
+
+  <div class="download-section">
+    <h2>Untuk Windows / PC</h2>
+    <button class="download-button" onclick="salinIP('rootopia.vercel.app')">Salin IP Server</button>
   </div>
 
   <div class="footer">
-    <a href="https://discord.gg/yourdiscordlink" class="discord-btn">Gabung Discord RooTopia</a>
     <a href="index.html" class="back-link">← Kembali ke Beranda</a>
-    <p>© 2025 RooTopia GTPS. All rights reserved.<br>
-    Designed with ❤️ by CoolDown.</p>
+    <span>© 2025 RooTopia GTPS. All rights reserved.<br>Designed with ❤️ by CoolDown.</span>
   </div>
-
-  <script>
-    function toggleAndroid() {
-      const tools = document.getElementById('android-tools');
-      tools.style.display = tools.style.display === 'block' ? 'none' : 'block';
-    }
-  </script>
 </body>
 </html>

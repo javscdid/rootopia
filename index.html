@@ -2,58 +2,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GTPS Hosting Guide</title>
+  <title>RooTopia Hosting Guide</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f7f8fa;
+      background-color: #0f0f0f;
+      color: #e0e0e0;
       margin: 0;
       padding: 0;
-      color: #333;
     }
     .container {
       max-width: 800px;
       margin: auto;
       padding: 40px 20px;
+      animation: fadeIn 1s ease;
     }
     h1 {
       text-align: center;
-      color: #444;
+      color: #ffffff;
+      font-size: 2.5em;
+      margin-bottom: 20px;
     }
     .btn {
-      background-color: #444;
-      color: white;
-      padding: 10px 16px;
+      background-color: #1f1f1f;
+      color: #fff;
+      padding: 12px 20px;
       border: none;
       border-radius: 8px;
       cursor: pointer;
       margin: 8px 4px;
       font-size: 16px;
+      transition: background 0.3s ease;
     }
     .btn:hover {
-      background-color: #222;
+      background-color: #333;
     }
     .hidden {
       display: none;
     }
     .section {
-      background: #fff;
-      border-radius: 10px;
+      background: #1a1a1a;
+      border-radius: 12px;
       padding: 20px;
       margin-top: 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+      animation: slideDown 0.5s ease;
     }
     pre {
-      background: #eee;
-      padding: 10px;
+      background: #2b2b2b;
+      padding: 12px;
       border-radius: 6px;
       overflow-x: auto;
+      color: #00ff88;
+    }
+    ol li {
+      margin-bottom: 8px;
+    }
+    a.download-link {
+      color: #00cfff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a.download-link:hover {
+      text-decoration: underline;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-10px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>GTPS Hosting Tools Guide</h1>
+    <h1>RooTopia Hosting Tools</h1>
     <button class="btn" onclick="toggleSection('hostSection')">Host Tools</button><div id="hostSection" class="section hidden">
   <p>Pilih platform yang kamu gunakan:</p>
   <button class="btn" onclick="toggleSection('androidSection')">Android</button>
@@ -71,9 +96,9 @@
     <pre id="textPT">IP: 123.456.789 | Port: 17091</pre>
     <h3>Cara Login dengan PowerTunnel:</h3>
     <ol>
-      <li>Download PowerTunnel.</li>
+      <li>Download <a class="download-link" href="#">PowerTunnel</a>.</li>
       <li>Buka aplikasi dan masukkan IP & Port di atas.</li>
-      <li>Nyalakan VPN dan buka Growtopia.</li>
+      <li>Aktifkan VPN dan buka Growtopia.</li>
     </ol>
   </div>
 
@@ -82,7 +107,7 @@
     <pre id="textVH">IP: 987.654.321 | Port: 17091</pre>
     <h3>Cara Login dengan Virtual Host:</h3>
     <ol>
-      <li>Download aplikasi Virtual Host.</li>
+      <li>Download <a class="download-link" href="#">Virtual Host</a>.</li>
       <li>Edit host dan isi IP server kamu.</li>
       <li>Simpan dan aktifkan host.</li>
       <li>Buka Growtopia.</li>
@@ -94,8 +119,8 @@
     <pre id="textPC">IP: 192.168.0.1 | Port: 17091</pre>
     <h3>Cara Login di PC:</h3>
     <ol>
-      <li>Edit file `hosts` di Windows: `C:\Windows\System32\drivers\etc\hosts`</li>
-      <li>Tambahkan baris: <br>`192.168.0.1 growtopia1.com growtopia2.com`</li>
+      <li>Edit file <code>hosts</code> di Windows: <br><code>C:\Windows\System32\drivers\etc\hosts</code></li>
+      <li>Tambahkan baris berikut:<br><code>192.168.0.1 growtopia1.com growtopia2.com</code></li>
       <li>Buka Growtopia dan login.</li>
     </ol>
   </div>
@@ -105,12 +130,11 @@
     <pre id="textIOS">IP: 10.10.10.10 | Port: 17091</pre>
     <h3>Cara Login di iOS:</h3>
     <ol>
-      <li>Gunakan aplikasi seperti Shadowrocket atau Quantumult.</li>
-      <li>Tambahkan rule custom host ke IP server kamu.</li>
+      <li>Gunakan aplikasi seperti <a class="download-link" href="#">Shadowrocket</a> atau <a class="download-link" href="#">Quantumult</a>.</li>
+      <li>Tambahkan rule host custom ke IP server kamu.</li>
       <li>Nyalakan rule dan buka Growtopia.</li>
     </ol>
   </div>
-
 </div>
 
   </div>  <script>
@@ -122,7 +146,7 @@
     function copyText(id) {
       const text = document.getElementById(id).innerText;
       navigator.clipboard.writeText(text).then(() => {
-        alert("Teks disalin!");
+        alert("Teks berhasil disalin!");
       });
     }
   </script></body>

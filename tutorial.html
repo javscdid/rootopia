@@ -3,157 +3,161 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tutorial RooTopia</title>
+  <title>Tutorial Login RooTopia</title>
   <style>
     body {
-      background-color: #0a0a0a;
-      color: #eee;
+      background-color: #000;
+      color: #fff;
       font-family: sans-serif;
-      padding: 20px;
       margin: 0;
+      padding: 0 20px;
     }
-    h1, h2, h3 {
-      color: #ffcc00;
+    h1, h2, p {
+      text-align: center;
+      margin-bottom: 15px;
     }
-    button {
+    .tab {
+      display: flex;
+      justify-content: center;
+      margin: 30px 0 20px;
+      flex-wrap: wrap;
+    }
+    .tab button {
+      background-color: #111;
+      border: 1px solid #555;
+      color: white;
       padding: 10px 20px;
-      margin: 5px;
-      border: none;
-      border-radius: 5px;
-      background-color: #222;
-      color: #ffcc00;
       cursor: pointer;
+      margin: 5px;
+      border-radius: 8px;
     }
-    button:hover {
-      background-color: #333;
+    .tab button.active {
+      background-color: #facc15;
+      color: #000;
+      font-weight: bold;
     }
-    section {
+    .tab-content {
+      display: none;
+      margin-bottom: 20px;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    iframe {
+      display: block;
+      margin: 0 auto 30px;
+      max-width: 100%;
+      border: none;
+      border-radius: 12px;
+    }
+    .fade-scroll {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(30px);
       transition: all 0.6s ease-out;
     }
-    section.visible {
+    .fade-scroll.visible {
       opacity: 1;
       transform: translateY(0);
     }
-    pre {
-      background-color: #111;
-      padding: 10px;
+    .button-link {
+      display: inline-block;
+      background-color: white;
+      color: black;
+      padding: 12px 24px;
       border-radius: 8px;
-      overflow-x: auto;
-    }
-    .footer {
-      margin-top: 60px;
-      background-color: #111;
-      padding: 20px;
-      text-align: center;
-      color: #aaa;
-    }
-    .footer a {
-      color: #ffcc00;
       text-decoration: none;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    .back-link {
+      color: #ccc;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    footer {
+      background-color: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
 
-  <h1 style="text-align:center;">📖 Tutorial Koneksi RooTopia</h1>
+  <h1 class="fade-scroll">Tutorial Login RooTopia</h1>
+  <p class="fade-scroll">Ikuti panduan lengkap di bawah ini untuk bisa bermain RooTopia di semua perangkat (Android, PC, iOS).</p>
 
-  <section>
-    <h2>🎥 Cara Login ke RooTopia</h2>
-    <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; margin-bottom:30px; border:2px solid #444; border-radius:10px;">
-      <iframe src="https://www.youtube.com/embed/dn6_LWvej44" 
-        frameborder="0" allowfullscreen 
-        style="position:absolute; top:0; left:0; width:100%; height:100%;">
-      </iframe>
-    </div>
-  </section>
+  <iframe class="fade-scroll" width="560" height="315" src="https://www.youtube.com/embed/dn6_LWvej44?si=yKZcHvabc3ct8YQg" allowfullscreen></iframe>
 
-  <section>
-    <h2>📱 Android</h2>
-    <div>
-      <button onclick="showOnly('ptunnel')">PowerTunnel</button>
-      <button onclick="showOnly('vhost')">Virtual Host</button>
-    </div>
-
-    <div id="ptunnel" style="display:none; margin-top:20px;">
-      <h3>🔌 PowerTunnel</h3>
-      <ol>
-        <li>Buka aplikasi <strong>PowerTunnel</strong>.</li>
-        <li>Masuk ke menu <strong>Plugins</strong>.</li>
-        <li>Tap ikon <strong>Settings</strong> di bagian <em>Hosts Plugin</em>.</li>
-        <li>Pilih <strong>"Hosts File URL"</strong>.</li>
-        <li>Masukkan URL berikut:  
-          <br><code>https://gtpshost.com/RooTopia-GH.txt</code></li>
-        <li>Tap <strong>OK</strong>, lalu klik <strong>Connect</strong>.</li>
-        <li>Buka <strong>Growtopia</strong> dan mainkan!</li>
-      </ol>
-    </div>
-
-    <div id="vhost" style="display:none; margin-top:20px;">
-      <h3>🌐 Virtual Host</h3>
-      <ol>
-        <li>Download file vhost dari RooTopia.</li>
-        <li>Buka aplikasi <strong>Virtual Hosts</strong>.</li>
-        <li>Klik <strong>SELECT HOSTS FILE</strong> dan pilih file yang di-download.</li>
-        <li>Aktifkan checkbox besar jadi warna hijau.</li>
-        <li>Buka Growtopia dan connect!</li>
-      </ol>
-    </div>
-  </section>
-
-  <section>
-    <h2>💻 PC (Windows)</h2>
-    <ol>
-      <li>Tekan <strong>⊞ Win+R</strong>, lalu ketik:  
-        <br><code>C:\Windows\System32\drivers\etc</code></li>
-      <li>Edit file <strong>hosts</strong> dengan Notepad.</li>
-      <li>Tambahkan baris berikut:</li>
-      <pre>
-15.235.166.218 growtopia1.com
-15.235.166.218 growtopia2.com
-15.235.166.218 www.growtopia1.com
-15.235.166.218 www.growtopia2.com
-15.235.166.218 RvLnd.here</pre>
-      <li>Simpan file, lalu buka Growtopia!</li>
-    </ol>
-  </section>
-
-  <section>
-    <h2>🍎 iOS (Surge 5)</h2>
-    <ol>
-      <li>Install aplikasi <strong>Surge 5</strong> dari App Store.</li>
-      <li>Tekan <strong>OK</strong> setelah membuka aplikasi.</li>
-      <li>Klik <strong>Default.conf</strong>.</li>
-      <li>Di bagian <strong>IMPORT</strong>, pilih <strong>Download Profile from URL</strong>.</li>
-      <li>Masukkan URL:  
-        <br><code>https://ios.gtpshost.com/RooTopia-GH</code></li>
-      <li>Tekan <strong>OK</strong>, lalu <strong>Done</strong>.</li>
-      <li>Setup VPN → Allow Configuration → Connect dan mainkan!</li>
-    </ol>
-  </section>
-
-  <!-- Buttons -->
-  <div style="margin-top: 40px; text-align: center;">
-    <a href="index.html" style="background:#222; color:#ffcc00; padding:12px 25px; text-decoration:none; border-radius:6px;">⬅️ Kembali ke Beranda</a>
-    <br><br>
-    <a href="https://chat.whatsapp.com/Dsj3RgQOsswFU3ZX1B0pNR?mode=ac_t" style="background:#25D366; color:white; padding:12px 25px; text-decoration:none; border-radius:6px;">📱 Join RooTopia WhatsApp</a>
+  <div class="tab">
+    <button onclick="showTab('android')" class="active">Android</button>
+    <button onclick="showTab('pc')">PC</button>
+    <button onclick="showTab('ios')">iOS</button>
   </div>
 
-  <!-- Footer -->
-  <div class="footer">
-    <p>© 2025 All rights reserved</p>
+  <div id="android" class="tab-content active fade-scroll">
+    <h2>Client Android</h2>
+    <p>Untuk bermain RooTopia di Android, kamu bisa menggunakan aplikasi <strong>PowerTunnel</strong> atau <strong>Virtual Host</strong>. Berikut langkah-langkahnya:</p>
+    <ol>
+      <li>Download dan install aplikasi PowerTunnel atau Virtual Host dari link yang diberikan oleh RooTopia.</li>
+      <li>Download file config RooTopia (biasanya berupa file .json atau .txt).</li>
+      <li>Buka aplikasi PowerTunnel atau Virtual Host dan masukkan config tersebut.</li>
+      <li>Aktifkan VPN/host-nya di aplikasi.</li>
+      <li>Setelah aktif, buka game Growtopia, dan kamu akan langsung terhubung ke server RooTopia.</li>
+    </ol>
+    <p><em>Catatan:</em> Pastikan koneksi internet stabil dan aplikasi diizinkan berjalan di latar belakang.</p>
   </div>
+
+  <div id="pc" class="tab-content fade-scroll">
+    <h2>Client PC (Windows)</h2>
+    <p>Untuk pengguna Windows, kamu perlu mengubah file <code>hosts</code> agar bisa terhubung ke server RooTopia:</p>
+    <ol>
+      <li>Buka Notepad sebagai administrator (klik kanan > Run as administrator).</li>
+      <li>Buka file <code>C:\Windows\System32\drivers\etc\hosts</code>.</li>
+      <li>Di bagian paling bawah file tersebut, tambahkan baris berikut:<br>
+        <code>123.456.789.10 growtopia1.com</code><br>
+        <code>123.456.789.10 growtopia2.com</code>
+      </li>
+      <li>Simpan file (Ctrl + S), lalu tutup Notepad.</li>
+      <li>Buka Growtopia seperti biasa, maka kamu akan masuk ke server RooTopia.</li>
+    </ol>
+    <p><em>Catatan:</em> Pastikan antivirus atau Windows Defender tidak memblokir perubahan file hosts.</p>
+  </div>
+
+  <div id="ios" class="tab-content fade-scroll">
+    <h2>Client iOS (Surge 5)</h2>
+    <p>Untuk pengguna iOS, kamu dapat menggunakan aplikasi <strong>Surge 5</strong> yang tersedia di App Store:</p>
+    <ol>
+      <li>Buka App Store dan cari aplikasi "Surge 5", kemudian install.</li>
+      <li>Buka aplikasi Surge 5 dan import config RooTopia (format .conf atau URL config).</li>
+      <li>Aktifkan koneksi di aplikasi Surge 5.</li>
+      <li>Setelah Surge aktif, buka Growtopia seperti biasa.</li>
+    </ol>
+    <p><em>Catatan:</em> Beberapa config mungkin membutuhkan versi premium dari Surge.</p>
+  </div>
+
+  <div style="text-align: center; margin-top: 30px;">
+    <a href="https://chat.whatsapp.com/Dsj3RgQOsswFU3ZX1B0pNR?mode=ac_t" target="_blank" class="button-link">Join RooTopia WhatsApp</a>
+    <a href="index.html" class="back-link">← Kembali ke Beranda</a>
+  </div>
+
+  <footer>
+    © 2025 RooTopia Private Server. All rights reserved.
+  </footer>
 
   <script>
-    function showOnly(id) {
-      const ids = ['ptunnel', 'vhost'];
-      ids.forEach(i => {
-        document.getElementById(i).style.display = (i === id) ? 'block' : 'none';
-      });
+    function showTab(id) {
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+
+      document.querySelectorAll('.tab button').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
     }
 
-    const observer = new IntersectionObserver(entries => {
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
@@ -161,8 +165,8 @@
       });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('section').forEach(section => {
-      observer.observe(section);
+    document.querySelectorAll('.fade-scroll').forEach(el => {
+      observer.observe(el);
     });
   </script>
 
